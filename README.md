@@ -82,8 +82,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Performs a 'fuzzy search' on given JSON. The JSON includes a list of phrases. The current configuration allows for one extra word in the phrase. 
 
 Example:
