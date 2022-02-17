@@ -238,8 +238,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [stars-url]: https://github.com/dev-mike-del/fuzzy_word_search/stargazers
 [issues-shield]: https://img.shields.io/github/issues/dev-mike-del/fuzzy_word_search.svg?style=for-the-badge
 [issues-url]: https://github.com/dev-mike-del/fuzzy_word_search/issues
-[license-shield]: https://img.shields.io/github/license/dev-mike-del/fuzzy_word_search.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/dev-mike-del/ldap_operations.svg?style=for-the-badge
 [license-url]: https://github.com/dev-mike-del/fuzzy_word_search/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mike-del
-[product-screenshot]: images/screenshot.png
