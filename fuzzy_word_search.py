@@ -135,7 +135,7 @@ if __name__ == "__main__":
     fuzzy_search = FuzzyWordSearch("test_input.json")
     results = fuzzy_search.run
     print(
-"""
+        """
 Runing fuzzy_word_search.py directly will show this example. This example uses
 test_input.json to demonstrait the 'fuzzy search'
 
