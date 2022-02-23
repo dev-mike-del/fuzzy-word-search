@@ -27,6 +27,7 @@ class FuzzyWordSearch:
             # the value is a dictionary.
             # end format = {query:{phrase:value, fuzzy match:value},}
             self.fuzzy_search_dict[query] = {}
+        self.add_phrases_to_fuzzy_search_dict()
 
     def check_if_words_match(self, query, phrase):
         """
@@ -111,7 +112,7 @@ class FuzzyWordSearch:
         for query in self.fuzzy_search_dict:
             try:
                 if self.fuzzy_search_dict[query]["phrases"]:
-                    print(f"\n\n\nQuery: {query}")
+                    print(f"\nQuery: {query}")
                     for phrase in self.fuzzy_search_dict[query]["phrases"]:
                         print(
                             f"""{self.fuzzy_search_dict[query]['phrases'].index(phrase) +1}
@@ -121,19 +122,17 @@ Fuzzy Search: {phrase['fuzzy match']}"""
             except KeyError:
                 pass
 
-    def run(self):
+    def print_results_dict(self):
         """
         Calls 'add_phrases_to_fuzzy_search_dict()' and 'print_results()'. If
         FuzzySearch is initiated with a properly formated JSON file, calling
         'run()' with run through the class methods and print out the result.
         """
-        self.add_phrases_to_fuzzy_search_dict()
-        self.print_results()
+        print(self.fuzzy_search_dict)
 
 
 if __name__ == "__main__":
     fuzzy_search = FuzzyWordSearch("test_input.json")
-    results = fuzzy_search.run
     print(
         """
 Runing fuzzy_word_search.py directly will show this example. This example uses
@@ -149,7 +148,7 @@ phrases in each query string. Finally, test_input.json includes a list of
 solutions for testing purposes.
 
 $ fuzzy_search = FuzzyWordSearch('test_input.json')
-$ fuzzy_search.run
-$ {results}
+$ fuzzy_search.run()
 """
     )
+    fuzzy_search.print_results_dict()
