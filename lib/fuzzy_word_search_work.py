@@ -27,6 +27,7 @@ class FuzzyWordSearchWork:
             # the value is a dictionary.
             # end format = {query:{phrase:value, fuzzy match:value},}
             self.fuzzy_search_dict[query] = {}
+        self.add_phrases_to_fuzzy_search_dict()
 
     def check_if_words_match(self, query, phrase):
         """

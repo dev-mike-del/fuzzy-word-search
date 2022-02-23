@@ -1,13 +1,12 @@
 """This module performs a 'fuzzy search on on JSON file"""
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import json
 from lib.fuzzy_word_search_work import FuzzyWordSearchWork
 
 
 # Performs a 'fuzzy search' on given JSON.
 # See test_input.json for JSON format
-class FuzzyWordSearch:
+class FuzzyWordSearch(FuzzyWordSearchWork):
     """
     Performs a 'fuzzy word search' on given JSON. See test_input.json for JSON format.
     Instantiate FuzzyWordSearch with the path to the JSON file as the argument. Once
@@ -16,7 +15,7 @@ class FuzzyWordSearch:
     """
 
     def __init__(self, json_filepath):
-        FuzzyWordSearchWork().__init__(json_filepath)
+        FuzzyWordSearchWork.__init__(self, json_filepath)
 
     def print_results(self):
         """
@@ -45,7 +44,7 @@ Fuzzy Search: {phrase['fuzzy match']}"""
 
 
 if __name__ == "__main__":
-    fuzzy_search = FuzzyWordSearch("test_input.json")
+    fuzzy_search = FuzzyWordSearch("../test_input.json")
     print(
         """
 Runing fuzzy_word_search.py directly will show this example. This example uses
