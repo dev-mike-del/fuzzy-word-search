@@ -9,7 +9,7 @@ import json
 class FuzzyWordSearch:
     """
     Performs a 'fuzzy word search' on given JSON. See test_input.json for JSON format.
-    Initiate FuzzyWordSearch with the path to the JSON file as the argument. Once
+    Instantiate FuzzyWordSearch with the path to the JSON file as the argument. Once
     initiated, the 'run()' method will execute the 'fuzzy search' and print the
     results.
     """
@@ -131,5 +131,23 @@ Fuzzy Search: {phrase['fuzzy match']}"""
         self.print_results()
 
 
-# fuzzy_search = FuzzyWordSearch('test_input.json')
-# fuzzy_search.run()
+if __name__ == "__main__":
+    fuzzy_search = FuzzyWordSearch('test_input.json')
+    results = fuzzy_search.run
+    print('''
+Runing fuzzy_word_search.py directly will show this example. This example uses
+test_input.json to demonstrait the 'fuzzy search'
+
+This module performs a 'fuzzy search' on on JSON file. See test_input.json for
+JSON format. Instantiate FuzzyWordSearch class with the path to the JSON file
+as the argument. Once instantiated, the 'run()' method will execute the 
+'fuzzy search' and print the results. The JSON includes a list of phrases. The 
+current configuration allows for one extra word in the phrase. Also, the JSON 
+includes a list of queries. The class "FuzzyWordSearch" fuzzy searches all the 
+phrases in each query string. Finally, test_input.json includes a list of 
+solutions for testing purposes.
+
+$ fuzzy_search = FuzzyWordSearch('test_input.json')
+$ fuzzy_search.run
+$ {results}
+''')
