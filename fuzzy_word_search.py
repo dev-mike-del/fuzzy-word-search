@@ -1,9 +1,12 @@
+"""This module performs a 'fuzzy search on on JSON file"""
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import json
 
 
 # Performs a 'fuzzy search' on given JSON.
 # See test_input.json for JSON format
-class FuzzyWordSearch(object):
+class FuzzyWordSearch:
     """
     Performs a 'fuzzy word search' on given JSON. See test_input.json for JSON format.
     Initiate FuzzyWordSearch with the path to the JSON file as the argument. Once
@@ -12,11 +15,11 @@ class FuzzyWordSearch(object):
     """
 
     def __init__(self, json_filepath):
-        super(FuzzySearch, self).__init__()
+        super().__init__()
         # Opening JSON file
-        f = open(json_filepath)
+        json_file = open(json_filepath)
         # returns JSON object as a dictionary
-        self.data = json.load(f)
+        self.data = json.load(json_file)
         # creates a dictionary for the results
         self.fuzzy_search_dict = {}
         # iterates through queries and adds them as keys in fuzzy_search_dict
@@ -47,10 +50,10 @@ class FuzzyWordSearch(object):
             # index and the end index of the matching phrase within the query
             result = self.check_if_in_range(query, words)
             return result
-        else:
-            return False
+        return False
 
-    def check_if_in_range(self, query, list_of_words):
+    @classmethod
+    def check_if_in_range(cls, query, list_of_words):
         """
         Called in the method 'check_if_words_match()'. Takes a string query
         and a list of string words (list_of_words). Defines start index and
@@ -73,8 +76,7 @@ class FuzzyWordSearch(object):
         # If word count in list_of_words covers the index spread return indexes
         if (len(list_of_words)) < abs(index_end - index_start):
             return False
-        else:
-            return {"index start": index_start, "index end": index_end}
+        return {"index start": index_start, "index end": index_end}
 
     def add_phrases_to_fuzzy_search_dict(self):
         """
